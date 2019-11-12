@@ -487,6 +487,7 @@ class EpochsEEGLAB(BaseEpochs):
         if events is None and eeg.trials > 1:
             # first extract the events and construct an event_id dict
             event_name, event_latencies, unique_ev = list(), list(), list()
+            self.event_tagtype = list()
             ev_idx = 0
             warn_multiple_events = False
             epochs = _bunchify(eeg.epoch)
@@ -503,6 +504,7 @@ class EpochsEEGLAB(BaseEpochs):
                     warn_multiple_events = True
                 else:
                     event_type = ep.eventtype
+                    self.event_tagtype.append(ep.eventtag_type)
                     event_name.append(ep.eventtype)
                     event_latencies.append(events[ev_idx].latency)
                     ev_idx += 1
