@@ -545,6 +545,7 @@ class EpochsEEGLAB(BaseEpochs):
                                  '(event id %i)' % (key, val))
 
         if isinstance(eeg.data, str):
+            print(input_fname,'aaa',input_fname[-3] + 'fdt')
             basedir = op.dirname(input_fname)
             data_fname = op.join(basedir, eeg.data)
             _check_fname(data_fname)
