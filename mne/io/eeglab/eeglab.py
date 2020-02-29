@@ -547,7 +547,7 @@ class EpochsEEGLAB(BaseEpochs):
         if isinstance(eeg.data, str):
             basedir = op.dirname(input_fname)
             #data_fname = op.join(basedir, eeg.data)
-            data_fname = input_fname[-3] + 'fdt'
+            data_fname = input_fname[:-3] + 'fdt'
             #_check_fname(data_fname)
             with open(data_fname, 'rb') as data_fid:
                 data = np.fromfile(data_fid, dtype=np.float32)
