@@ -546,10 +546,9 @@ class EpochsEEGLAB(BaseEpochs):
 
         if isinstance(eeg.data, str):
             basedir = op.dirname(input_fname)
-            data_fname = op.join(basedir, eeg.data)
+            #data_fname = op.join(basedir, eeg.data)
             data_fname = input_fname[-3] + 'fdt'
             check_fname(data_fname)
-            print(data_fname,'aaaa')
             with open(data_fname, 'rb') as data_fid:
                 data = np.fromfile(data_fid, dtype=np.float32)
                 data = data.reshape((eeg.nbchan, eeg.pnts, eeg.trials),
