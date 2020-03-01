@@ -15,7 +15,7 @@ Examples
 
 import sys
 
-import mne
+import MNE.mne
 
 
 def run():
