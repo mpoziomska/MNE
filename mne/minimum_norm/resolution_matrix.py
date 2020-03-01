@@ -3,12 +3,12 @@ from copy import deepcopy
 
 import numpy as np
 
-from mne import pick_channels_forward, EvokedArray, SourceEstimate
-from mne.io.constants import FIFF
-from mne.utils import logger, verbose
-from mne.forward.forward import convert_forward_solution
+from MNE.mne import pick_channels_forward, EvokedArray, SourceEstimate
+from MNE.mne.io.constants import FIFF
+from MNE.mne.utils import logger, verbose
+from MNE.mne.forward.forward import convert_forward_solution
 
-from mne.minimum_norm import apply_inverse
+from MNE.mne.minimum_norm import apply_inverse
 
 
 @verbose
