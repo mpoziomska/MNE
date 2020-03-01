@@ -15,12 +15,12 @@ Examples
 
 import os
 import sys
-import mne
+import MNE.mne
 
 
 def run():
     """Run command."""
-    from mne.commands.utils import get_optparser
+    from MNE.mne.commands.utils import get_optparser
 
     parser = get_optparser(__file__)
 
