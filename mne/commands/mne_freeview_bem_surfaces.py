@@ -14,8 +14,8 @@ import sys
 import os
 import os.path as op
 
-import mne
-from mne.utils import run_subprocess, get_subjects_dir
+import MNE.mne
+from MNE.mne.utils import run_subprocess, get_subjects_dir
 
 
 def freeview_bem_surfaces(subject, subjects_dir, method):
