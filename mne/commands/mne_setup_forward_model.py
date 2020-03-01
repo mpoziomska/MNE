@@ -12,7 +12,7 @@ Examples
 import sys
 import os
 import MNE.mne
-from mne.utils import get_subjects_dir, warn
+from MNE.mne.utils import get_subjects_dir, warn
 
 
 def run():
