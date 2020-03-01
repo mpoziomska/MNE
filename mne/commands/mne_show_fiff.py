@@ -19,7 +19,7 @@ To see only tag 102:
 # Authors : Eric Larson, PhD
 
 import sys
-import mne
+import MNE.mne
 
 
 def run():
