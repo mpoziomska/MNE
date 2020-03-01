@@ -12,7 +12,7 @@ Examples
 # Authors : Alexandre Gramfort, Ph.D.
 
 import sys
-import mne
+import MNE.mne
 
 
 def run():
