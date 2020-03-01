@@ -41,8 +41,8 @@ Before running this script do the following:
 """
 # Authors: Lorenzo De Santis
 
-import mne
-from mne.bem import convert_flash_mris, make_flash_bem
+import MNE.mne
+from MNE.mne.bem import convert_flash_mris, make_flash_bem
 
 
 def run():
