@@ -12,9 +12,9 @@ Examples
 
 import sys
 
-import mne
-from mne.bem import make_watershed_bem
-from mne.utils import _check_option
+import MNE.mne
+from MNE.mne.bem import make_watershed_bem
+from MNE.mne.utils import _check_option
 
 
 def run():
