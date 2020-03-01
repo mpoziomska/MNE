@@ -69,9 +69,9 @@ For help on all the available options, do::
 import sys
 import time
 
-import mne
-from mne.report import Report
-from mne.utils import verbose, logger
+import MNE.mne
+from MNE.mne.report import Report
+from MNE.mne.utils import verbose, logger
 
 
 @verbose
