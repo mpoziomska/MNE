@@ -41,7 +41,7 @@ Before running this script do the following:
 """
 # Authors: Lorenzo De Santis
 
-import MNE.mne
+import MNE.mne as mne
 from MNE.mne.bem import convert_flash_mris, make_flash_bem
 
 
