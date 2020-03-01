@@ -15,7 +15,7 @@ Examples
 
 import sys
 
-import mne
+import MNE.mne as mne
 
 
 def clean_ecg_eog(in_fif_fname, out_fif_fname=None, eog=True, ecg=True,
