@@ -11,7 +11,7 @@ Examples
 
 import sys
 import os
-import mne
+import MNE.mne
 from mne.utils import get_subjects_dir, warn
 
 
