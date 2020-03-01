@@ -12,7 +12,7 @@ import os.path as op
 from optparse import OptionParser
 import sys
 
-import mne
+import MNE.mne
 
 
 def _add_verbose_flag(parser):
