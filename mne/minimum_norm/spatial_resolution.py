@@ -9,8 +9,8 @@ Metrics can be computed for point-spread and cross-talk functions (PSFs/CTFs).
 """
 import numpy as np
 
-from mne import SourceEstimate
-from mne.utils import logger, verbose
+from MNE.mne import SourceEstimate
+from MNE.mne.utils import logger, verbose
 
 
 @verbose
