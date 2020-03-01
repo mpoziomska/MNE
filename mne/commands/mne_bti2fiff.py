@@ -31,8 +31,8 @@ Examples
 
 import sys
 
-import mne
-from mne.io import read_raw_bti
+import MNE.mne as mne
+from MNE.mne.io import read_raw_bti
 
 
 def run():
