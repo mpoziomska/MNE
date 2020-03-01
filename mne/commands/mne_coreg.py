@@ -13,13 +13,13 @@ Examples
 
 import os.path as op
 
-import mne
-from mne.utils import ETSContext
+import MNE.mne
+from MNE.mne.utils import ETSContext
 
 
 def run():
     """Run command."""
-    from mne.commands.utils import get_optparser, _add_verbose_flag
+    from MNE.mne.commands.utils import get_optparser, _add_verbose_flag
 
     parser = get_optparser(__file__)
 
