@@ -13,7 +13,7 @@ Examples
 # Authors : Eric Larson, PhD
 
 import sys
-import mne
+import MNE.mne as mne
 
 
 def run():
