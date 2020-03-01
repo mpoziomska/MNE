@@ -16,7 +16,7 @@ Examples
 """
 
 import sys
-import mne
+import MNE.mne as mne
 import os.path as op
 
 ANONYMIZE_FILE_PREFIX = 'anon'
