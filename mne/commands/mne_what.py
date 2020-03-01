@@ -11,7 +11,7 @@ Examples
 
 # Authors : Eric Larson, PhD
 
-import mne
+import MNE.mne
 
 
 def run():
