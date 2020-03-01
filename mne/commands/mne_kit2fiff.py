@@ -19,9 +19,9 @@ Use without arguments to invoke GUI:
 
 import sys
 
-import mne
-from mne.io import read_raw_kit
-from mne.utils import ETSContext
+importMNE. mne
+from MNE.mne.io import read_raw_kit
+from MNE.mne.utils import ETSContext
 
 
 def run():
