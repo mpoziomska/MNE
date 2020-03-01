@@ -20,8 +20,8 @@ import os
 import os.path as op
 import sys
 
-import mne
-from mne.utils import (run_subprocess, verbose, logger, ETSContext,
+import MNE.mne
+from MNE.mne.utils import (run_subprocess, verbose, logger, ETSContext,
                        get_subjects_dir)
 
 
