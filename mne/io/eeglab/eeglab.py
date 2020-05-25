@@ -282,6 +282,7 @@ class RawEEGLAB(BaseRaw):
                  preload=False, uint16_codec=None, verbose=None):  # noqa: D102
         basedir = op.dirname(input_fname)
         eeg = _check_load_mat(input_fname, uint16_codec)
+        self.EEG = eeg
         if eeg.trials != 1:
             raise TypeError('The number of trials is %d. It must be 1 for raw'
                             ' files. Please use `mne.io.read_epochs_eeglab` if'
@@ -351,7 +352,11 @@ class RawEEGLAB(BaseRaw):
             )
 
     # XXX: to be removed when deprecating montage
-
+    
+    @property
+    def eveng(self):
+        return self.EEG.event()
+    
     def set_montage(self, montage, update_ch_names=True,
                     raise_if_subset=DEPRECATED_PARAM,
                     verbose=None):
