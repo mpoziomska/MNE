@@ -9,6 +9,7 @@ import operator
 import os
 import os.path as op
 from pathlib import Path
+import MNE.mne as mne
 
 import numpy as np
 
@@ -318,7 +319,6 @@ def _validate_type(item, types=None, item_name=None, type_name=None):
         _ensure_int(item, name=item_name)
         return  # terminate prematurely
     elif types == "info":
-        import MNE.mne as mne
         from mne.io import Info as types
 
     if not isinstance(types, (list, tuple)):
