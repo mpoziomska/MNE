@@ -278,7 +278,7 @@ class RawEEGLAB(BaseRaw):
     """
 
     @verbose
-    def __init__(self, input_fname, eog=(),
+    def __init__(self, input_fname, eog=(), events=None, event_id=None,
                  preload=False, uint16_codec=None, verbose=None):  # noqa: D102
         basedir = op.dirname(input_fname)
         logger.info('DUPA')
