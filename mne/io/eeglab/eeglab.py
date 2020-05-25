@@ -281,6 +281,7 @@ class RawEEGLAB(BaseRaw):
     def __init__(self, input_fname, eog=(),
                  preload=False, uint16_codec=None, verbose=None):  # noqa: D102
         basedir = op.dirname(input_fname)
+        print("DUPA")
         eeg = _check_load_mat(input_fname, uint16_codec)
         self.EEG = eeg
         if eeg.trials != 1:
@@ -353,6 +354,7 @@ class RawEEGLAB(BaseRaw):
 
     # XXX: to be removed when deprecating montage
     
+    @property
     def event(self):
         return self.EEG.event()
     
