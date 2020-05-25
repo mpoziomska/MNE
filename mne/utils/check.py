@@ -318,7 +318,8 @@ def _validate_type(item, types=None, item_name=None, type_name=None):
         _ensure_int(item, name=item_name)
         return  # terminate prematurely
     elif types == "info":
-        from MNE.mne.io import Info as types
+        import MNE.mne as mne
+        from mne.io import Info as types
 
     if not isinstance(types, (list, tuple)):
         types = [types]
