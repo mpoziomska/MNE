@@ -353,8 +353,7 @@ class RawEEGLAB(BaseRaw):
 
     # XXX: to be removed when deprecating montage
     
-    @property
-    def eveng(self):
+    def event(self):
         return self.EEG.event()
     
     def set_montage(self, montage, update_ch_names=True,
