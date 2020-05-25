@@ -328,7 +328,38 @@ class RawEEGLAB(BaseRaw):
 
         latencies = np.round(annot.onset * self.info['sfreq'])
         _check_latencies(latencies)
+################################################################
+    if events is None and eeg.trials > 1:
+            # first extract the events and construct an event_id dict
+            event_name, event_latencies, unique_ev = list(), list(), list()
+            self.event_tagtype = list()
+            ev_idx = 0
+            warn_multiple_events = False
+            epochs = _bunchify(eeg.epoch)
+            events = _bunchify(eeg.event)
+            for ep in epochs:
+                if isinstance(ep.eventtype, (int, float)):
+                    ep.eventtype = str(ep.eventtype)
+                if not isinstance(ep.eventtype, str):
+                    event_type = '/'.join([str(et) for et in ep.eventtype])
+                    event_name.append(event_type)
+                    # store latency of only first event
+                    event_latencies.append(events[ev_idx].latency)
+                    ev_idx += len(ep.eventtype)
+                    warn_multiple_events = True
+                else:
+                    event_type = ep.eventtype
+                    self.event_tagtype.append(ep.eventtag_type)
+                    event_name.append(ep.eventtype)
+                    event_latencies.append(events[ev_idx].latency)
+                    ev_idx += 1
 
+                if event_type not in unique_ev:
+                    unique_ev.append(event_type)
+
+                # invent event dict but use id > 0 so you know its a trigger
+                event_id = {ev: idx + 1 for idx, ev in enumerate(unique_ev)}
+###################################################
     def _read_segment_file(self, data, idx, fi, start, stop, cals, mult):
         """Read a chunk of raw data."""
         _read_segments_file(self, data, idx, fi, start, stop, cals, mult,
