@@ -264,7 +264,7 @@ def warn(message, category=RuntimeWarning, module='mne'):
     module : str
         The name of the module emitting the warning.
     """
-    import mne
+    import MNE.mne as mne
     root_dir = op.dirname(mne.__file__)
     frame = None
     if logger.level <= logging.WARN:
