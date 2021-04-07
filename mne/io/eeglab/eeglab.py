@@ -454,9 +454,8 @@ class EpochsEEGLAB(BaseEpochs):
                 (events is not None and event_id is not None)):
             raise ValueError('Both `events` and `event_id` must be '
                              'None or not None')
-        print(events, "AA")
+        print(eeg.trials)
         if events is None and eeg.trials > 1:
-            print("EE", events)
             # first extract the events and construct an event_id dict
             event_name, event_latencies, unique_ev = list(), list(), list()
             self.event_tagtype = list()
@@ -505,13 +504,11 @@ class EpochsEEGLAB(BaseEpochs):
                 events[idx, 2] = event_id[event_name[idx]]
         elif isinstance(events, str):
             events = read_events(events)
-            print("DD", events)
 
         logger.info('Extracting parameters from %s...' % input_fname)
         input_fname = op.abspath(input_fname)
         info, eeg_montage, _ = _get_info(eeg, eog=eog)
         
-        print("AA", event_id)
         
         for key, val in event_id.items():
             if val not in events[:, 2]:
