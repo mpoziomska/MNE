@@ -456,6 +456,7 @@ class EpochsEEGLAB(BaseEpochs):
                              'None or not None')
 
         if events is None and eeg.trials > 1:
+            print("EE", events)
             # first extract the events and construct an event_id dict
             event_name, event_latencies, unique_ev = list(), list(), list()
             self.event_tagtype = list()
