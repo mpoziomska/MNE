@@ -463,7 +463,6 @@ class EpochsEEGLAB(BaseEpochs):
             warn_multiple_events = False
             epochs = _bunchify(eeg.epoch)
             events = _bunchify(eeg.event)
-            print("CC", len(epochs))
             for ep in epochs:
                 if isinstance(ep.eventtype, (int, float)):
                     ep.eventtype = str(ep.eventtype)
@@ -485,7 +484,6 @@ class EpochsEEGLAB(BaseEpochs):
                     unique_ev.append(event_type)
 
                 # invent event dict but use id > 0 so you know its a trigger
-                print("BB", len(unique_ev))
                 event_id = {ev: idx + 1 for idx, ev in enumerate(unique_ev)}
 
             # warn about multiple events in epoch if necessary
@@ -506,6 +504,7 @@ class EpochsEEGLAB(BaseEpochs):
                 events[idx, 2] = event_id[event_name[idx]]
         elif isinstance(events, str):
             events = read_events(events)
+            print("DD", events)
 
         logger.info('Extracting parameters from %s...' % input_fname)
         input_fname = op.abspath(input_fname)
