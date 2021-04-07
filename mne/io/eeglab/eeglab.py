@@ -463,6 +463,7 @@ class EpochsEEGLAB(BaseEpochs):
             warn_multiple_events = False
             epochs = _bunchify(eeg.epoch)
             events = _bunchify(eeg.event)
+            print("CC", len(epochs))
             for ep in epochs:
                 if isinstance(ep.eventtype, (int, float)):
                     ep.eventtype = str(ep.eventtype)
