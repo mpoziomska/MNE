@@ -67,7 +67,6 @@ def _check_load_mat(fname, uint16_codec):
         eeg = eeg['EEG']
     eeg = eeg.get('EEG', eeg)  # handle nested EEG structure
     eeg = Bunch(**eeg)
-    print(eeg.trials)
     eeg.trials = int(eeg.trials)
     eeg.nbchan = int(eeg.nbchan)
     eeg.pnts = int(eeg.pnts)
@@ -455,8 +454,7 @@ class EpochsEEGLAB(BaseEpochs):
                 (events is not None and event_id is not None)):
             raise ValueError('Both `events` and `event_id` must be '
                              'None or not None')
-        print(eeg.trials)
-        if events is None and eeg.trials > 1:
+        if events is None and eeg.trials >= 1:
             # first extract the events and construct an event_id dict
             event_name, event_latencies, unique_ev = list(), list(), list()
             self.event_tagtype = list()
