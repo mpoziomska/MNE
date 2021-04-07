@@ -454,7 +454,7 @@ class EpochsEEGLAB(BaseEpochs):
                 (events is not None and event_id is not None)):
             raise ValueError('Both `events` and `event_id` must be '
                              'None or not None')
-
+        print(events, "AA")
         if events is None and eeg.trials > 1:
             print("EE", events)
             # first extract the events and construct an event_id dict
