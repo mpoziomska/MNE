@@ -484,6 +484,7 @@ class EpochsEEGLAB(BaseEpochs):
                     unique_ev.append(event_type)
 
                 # invent event dict but use id > 0 so you know its a trigger
+                print("BB", len(unique_ev))
                 event_id = {ev: idx + 1 for idx, ev in enumerate(unique_ev)}
 
             # warn about multiple events in epoch if necessary
@@ -508,7 +509,9 @@ class EpochsEEGLAB(BaseEpochs):
         logger.info('Extracting parameters from %s...' % input_fname)
         input_fname = op.abspath(input_fname)
         info, eeg_montage, _ = _get_info(eeg, eog=eog)
-
+        
+        print("AA", event_id)
+        
         for key, val in event_id.items():
             if val not in events[:, 2]:
                 raise ValueError('No matching events found for %s '
